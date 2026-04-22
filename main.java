@@ -22,9 +22,9 @@ public class main {
         
         boolean continuar = true;
         
-        System.out.println("╔═══════════════════════════════════╗");
-        System.out.println("║     APLICACIÓN CALCULADORA        ║");
-        System.out.println("╚═══════════════════════════════════╝\n");
+        System.out.println("**======================================**");
+        System.out.println("**   * APLICACION CALCULADORA *      **");
+        System.out.println("**======================================**\n");
         
         while (continuar) {
             mostrarMenu();
@@ -57,7 +57,7 @@ public class main {
                     despedirse();
                     break;
                 default:
-                    System.out.println("❌ Opción no válida. Intenta nuevamente.\n");
+                    System.out.println("\n[!] Opcion no valida. Intenta nuevamente.\n");
             }
         }
         
@@ -68,19 +68,19 @@ public class main {
      * Muestra el menú de opciones
      */
     private static void mostrarMenu() {
-        System.out.println("\n┌─────────────────────────────────┐");
-        System.out.println("│ Selecciona una operación:        │");
-        System.out.println("├─────────────────────────────────┤");
-        System.out.println("│ 1. Suma (+)                      │");
-        System.out.println("│ 2. Resta (-)                     │");
-        System.out.println("│ 3. Multiplicación (*)            │");
-        System.out.println("│ 4. División (/)                  │");
-        System.out.println("│ 5. Módulo (%)                    │");
-        System.out.println("│ 6. Potencia (^)                  │");
-        System.out.println("│ 7. Raíz Cuadrada (√)             │");
-        System.out.println("│ 8. Salir                         │");
-        System.out.println("└─────────────────────────────────┘");
-        System.out.print("Tu opción: ");
+        System.out.println("\n+========================================+");
+        System.out.println("|  Selecciona una operacion:             |");
+        System.out.println("+========================================+");
+        System.out.println("|  1. Suma            [+]                |");
+        System.out.println("|  2. Resta           [-]                |");
+        System.out.println("|  3. Multiplicacion  [*]                |");
+        System.out.println("|  4. Division        [/]                |");
+        System.out.println("|  5. Modulo          [%]                |");
+        System.out.println("|  6. Potencia        [^]                |");
+        System.out.println("|  7. Raiz Cuadrada   [V]                |");
+        System.out.println("|  8. Salir                              |");
+        System.out.println("+========================================+");
+        System.out.print("Elige tu opcion: ");
     }
     
     /**
@@ -126,12 +126,12 @@ public class main {
                     break;
             }
             
-            System.out.println("\n✓ " + nombreOperacion + ": " + num1 + " " + operacion + " " + num2 + " = " + resultado);
+            System.out.println("\n[OK] " + nombreOperacion + ": " + num1 + " " + operacion + " " + num2 + " = " + resultado);
             
         } catch (IllegalArgumentException e) {
-            System.out.println("❌ Error: " + e.getMessage());
+            System.out.println("[ERROR] " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("❌ Error inesperado: " + e.getMessage());
+            System.out.println("[ERROR] Inesperado: " + e.getMessage());
         }
     }
     
@@ -144,12 +144,12 @@ public class main {
             double numero = obtenerNumero();
             
             double resultado = calculadora.raizCuadrada(numero);
-            System.out.println("\n✓ Raíz Cuadrada: √" + numero + " = " + resultado);
+            System.out.println("\n[OK] Raiz Cuadrada: sqrt(" + numero + ") = " + resultado);
             
         } catch (IllegalArgumentException e) {
-            System.out.println("❌ Error: " + e.getMessage());
+            System.out.println("[ERROR] " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("❌ Error inesperado: " + e.getMessage());
+            System.out.println("[ERROR] Inesperado: " + e.getMessage());
         }
     }
     
@@ -160,7 +160,7 @@ public class main {
      */
     private static double obtenerNumero() {
         while (!scanner.hasNextDouble()) {
-            System.out.print("❌ Entrada inválida. Por favor, ingresa un número: ");
+            System.out.print("[!] Entrada invalida. Ingresa un numero: ");
             scanner.nextLine();
         }
         return scanner.nextDouble();
@@ -170,10 +170,10 @@ public class main {
      * Muestra un mensaje de despedida
      */
     private static void despedirse() {
-        System.out.println("\n╔═══════════════════════════════════╗");
-        System.out.println("║   ¡Gracias por usar nuestra       ║");
-        System.out.println("║        CALCULADORA!               ║");
-        System.out.println("╚═══════════════════════════════════╝\n");
+        System.out.println("\n**======================================**");
+        System.out.println("**  * Gracias por usar nuestra *     **");
+        System.out.println("**     * CALCULADORA! *              **");
+        System.out.println("**======================================**\n");
     }
     
     /**
